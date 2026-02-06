@@ -1,5 +1,5 @@
 function checkPassword() {
-  const pass = "1402"; // เปลี่ยนรหัส
+  const pass = "1931"; // เปลี่ยนรหัส
   const input = document.getElementById("password").value;
   const error = document.getElementById("error");
   
