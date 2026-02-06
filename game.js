@@ -2,7 +2,7 @@
 // หน้าใส่รหัส
 // ===============================
 function checkPassword() {
-  const correctPassword = "1931"; // 🔐 เปลี่ยนรหัสตรงนี้
+  const correctPassword = "1931";
   const input = document.getElementById("password").value;
   const error = document.getElementById("error");
   
@@ -12,7 +12,6 @@ function checkPassword() {
     error.innerText = "รหัสไม่ถูกนะ ลองคิดถึงเค้าอีกที 💔";
   }
 }
-
 
 // ===============================
 // หน้าซองจดหมาย
@@ -28,14 +27,12 @@ function nextPage() {
   window.location.href = "gallery.html";
 }
 
-
 // ===============================
 // หน้ารูปคู่
 // ===============================
 function goForever() {
   window.location.href = "forever.html";
 }
-
 
 // ===============================
 // เอฟเฟกต์หัวใจลอย (โทนหวาน)
@@ -58,5 +55,5 @@ function createHeart() {
   }, 7000);
 }
 
-// สร้างหัวใจทุก ๆ 400ms
+// เริ่มเอฟเฟกต์หัวใจ
 setInterval(createHeart, 400);
