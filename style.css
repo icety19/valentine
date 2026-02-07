@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.pink {
+  background: linear-gradient(#ff9a9e, #fad0c4);
+  min-height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+.icon {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.envelope {
+  cursor: pointer;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+button {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+}
+
+.popup {
+  display: none;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  margin-top: 20px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.gallery img {
+  width: 150px;
+  border-radius: 15px;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  margin: 20px;
+}
+
+.name {
+  margin-top: 15px;
+  font-weight: bold;
+}
+  
+.memory-img {
+  width: 250px;      /* ปรับความกว้างรูป */
+  max-width: 90%;    /* กันล้นจอมือถือ */
+  height: auto;      /* ให้สัดส่วนรูปไม่เพี้ยน */
+  border-radius: 20px; /* มุมโค้ง น่ารัก */
+  margin: 20px auto;
+  display: block;
+}
