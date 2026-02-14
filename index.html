@@ -1,20 +1,185 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>Secret Love 💖</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(#ffe6ec, #fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(#ffe6ec, #fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.page {
+  max-width: 420px;   /* คุมความกว้างบนจอใหญ่ */
+  width: 100%;
+  text-align: center;
+}
+}
+.scroll-text {
+  height: 180px;              /* ความสูงกรอบข้อความ */
+  overflow: hidden;
+  position: relative;
+  margin-top: 50px;
+}
+
+.scroll-text p {
+  position: absolute;
+  width: 100%;
+  animation: scrollUp 3s linear forwards;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+@keyframes scrollUp {
+  0%   { top: 100%; }
+  100% { top: -10%; }
+}
+.page {
+  display: none;
+  text-align: center;
+  animation: fade 0.3 s;
+}
+.active {
+  display: block;
+}
+
+@keyframes fade {
+  from {opacity:0}
+  to {opacity:1}
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input {
+  padding: 12px;
+  font-size: 18px;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.heart {
+  font-size: 70px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0% {transform: scale(1)}
+  50% {transform: scale(1.2)}
+  100% {transform: scale(1)}
+}
+
+img {
+  width: 220px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+</style>
 </head>
-<body class="center pink">
 
-  <div class="card">
-    <img src="img/1.png" class="icon">
-    <h2>รหัสลับของเรา</h2>
-    <input type="password" id="password" placeholder="ใส่รหัสหัวใจ">
-    <button onclick="checkPassword()">เปิดหัวใจ 💘</button>
-    <p id="error"></p>
+<body>
+
+<!-- หน้า 1 -->
+<div class="page active" id="p1">
+  <h1>Happy Valentine’s Day 💕</h1>
+  <div class="heart">🎁</div>
+  
+  <button onclick="go(2)">เปิดของขวัญ</button>
+</div>
+
+<!-- หน้า 2 -->
+<div class="page" id="p2">
+  <h2>Our Anniversary 💗</h2>
+  <p>???</p>
+  
+  <input type="password" id="code" placeholder="เช่น 0000" oninput="hideError()">
+  
+  <p id="error" style="color:red; display:none; margin-top:10px;">
+    ❌ รหัสไม่ถูก ลองคิดถึงเค้าใหม่
+  </p>
+  
+  <button onclick="check()">ยืนยัน</button>
+</div>
+
+<!-- หน้า 3 -->
+<div class="page" id="p3">
+  <h2>รักเค้าไหม 🥺</h2>
+  
+  <button onclick="go(4)">❤️ รักสิ</button>
+  <br><br>
+  <button onclick="go(5)">❌ ไม่รัก</button>
+</div>
+<!-- หน้า 4 -->
+<div class="page" id="p4">
+  <h1>เค้ารักเธอที่สุดดด 💖</h1>
+  
+  <img src="img/photo.jpg">
+  
+  <div class="scroll-text">
+    <p>
+      
+        ขอบคุณที่เธออยู่ด้วยกันมาตลอด 🤍<br>
+       แม้ในวันที่เค้างอแง ทำตัวไม่น่ารัก<br>
+        เค้าขอให้เราอยู่ด้วยกันไปนานๆ<br>
+         สุขสันต์วันวาเลนไทน์นะที่รัก 💕
+    </p>
   </div>
+</div>
+<!-- หน้า 5 -->
+<div class="page" id="p5">
+  <h2>ไม่รักจริง ๆ หรอตี๋!! 🥺</h2>
+  <p>ใจร้ายไปป่ะ…</p>
+  
+  <button onclick="go(3)">⬅️ กลับไปคิดใหม่</button>
+</div>
+<script>
+  function go(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('p' + n).classList.add('active');
+  }
+  
+  function check() {
+    const pass = document.getElementById('code').value;
+    const error = document.getElementById('error');
+    
+    if (pass === "050759") { // 🔴 เปลี่ยนรหัสตรงนี้
+      error.style.display = "none";
+      go(3);
+    } else {
+      error.style.display = "block";
+    }
+  }
+  
+  function hideError() {
+    document.getElementById('error').style.display = "none";
+  }
+</script>
 
-<script src="game.js"></script>
 </body>
 </html>
